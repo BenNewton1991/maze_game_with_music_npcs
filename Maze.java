@@ -48,7 +48,7 @@ public class Maze
     int npc_1_y_loc = (int) (Math.random() * 16);
     
     while ((npc_1_x_loc == goal_x && npc_1_y_loc == goal_y) ||
-    (npc_1_x_loc == x_loc && npc_1_y_loc == goal_y))
+    (npc_1_x_loc == x_loc && npc_1_y_loc == y_loc))
     {
         npc_1_x_loc = (int) (Math.random() * 16);
         npc_1_y_loc = (int) (Math.random() * 16);
@@ -60,7 +60,7 @@ public class Maze
     int npc_2_y_loc = (int) (Math.random() * 16);
     
     while ((npc_2_x_loc == goal_x && npc_2_y_loc == goal_y) ||
-    (npc_2_x_loc == x_loc && npc_2_y_loc == goal_y) || 
+    (npc_2_x_loc == x_loc && npc_2_y_loc == y_loc) || 
     (npc_2_x_loc == npc_1_x_loc && npc_2_y_loc == npc_1_y_loc))
     {
         npc_2_x_loc = (int) (Math.random() * 16);
