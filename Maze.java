@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Maze 
 {
     String[][] maze = new String[16][16];
+    MusicPlayer music = new MusicPlayer();
     int x_loc; 
     int y_loc; 
     int goal_x;
@@ -23,6 +24,8 @@ public class Maze
                 maze[i][j] = "#";
             }
         }
+
+        music.play("start.wav");
 
         int x = (int) (Math.random() * 16);
         int y = (int) (Math.random() * 16);
@@ -135,6 +138,7 @@ public class Maze
             // How could you change this so it works within given character range?
             if (x_loc == npc_1.get_x() && y_loc == npc_1.get_y())
             {
+                music.play("attack.wav");
                 npc_1.dialogue_1();
                 npc_1.dialogue_2();
                 npc_1.die();
@@ -142,6 +146,7 @@ public class Maze
 
             if (x_loc == npc_2.get_x() && y_loc == npc_2.get_y())
             {
+                music.play("attack.wav");
                 npc_2.dialogue_1();
                 npc_2.dialogue_2();
                 npc_2.die();
@@ -151,7 +156,8 @@ public class Maze
 
             if (x_loc == goal_x && y_loc == goal_y)
             {
-                System.out.print("You WIN!");
+                System.out.println("You WIN!");
+                
                 break;
             }
 

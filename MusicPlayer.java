@@ -13,8 +13,8 @@ public class MusicPlayer
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
                 clip = AudioSystem.getClip();
                 clip.open(audioStream);
-                // Can remove loop continuously to only play once. 
-                clip.loop(Clip.LOOP_CONTINUOUSLY);
+                clip.loop(0);
+                // Can use to repeat clip.loop(Clip.LOOP_CONTINUOUSLY);
                 // Can add clip.loop(3) to play 3 times. Etc.
                 clip.start();
             } catch (Exception e) {
